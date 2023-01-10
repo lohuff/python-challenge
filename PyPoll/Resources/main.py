@@ -40,7 +40,7 @@ votes = [charles_votes, diana_votes,raymon_votes]
     
 #zip together candidates and total votes; show the winner
 dict_cand_and_votes = dict(zip(candidates,votes))
-key = max(dict_cand_and_votes, key=dict_cand_and_votes.get)
+winner = max(dict_cand_and_votes, winner=dict_cand_and_votes.get)
 
 #print our summary
 charles_percent = (charles_votes/total_votes) *100
@@ -56,7 +56,7 @@ print(f"Charles Casper Stockham: {charles_percent:.3f}% ({charles_votes})")
 print(f"Diana DeGette: {diana_percent:.3f}% ({diana_votes})")
 print(f"Raymon Anthony Doane: {raymon_percent:.3f}% ({raymon_votes})")
 print(f"----------------------------")
-print(f"Winner: {key}")
+print(f"Winner: {winner}")
 print(f"----------------------------")
 
 #export file
@@ -77,6 +77,6 @@ with open("election_analysis.txt", "w") as text_file:
     text_file.write("\n")
     text_file.write(f"------------------------------")
     text_file.write("\n")
-    text_file.write(f"Winner: {key}")
+    text_file.write(f"Winner: {winner}")
     text_file.write("\n")
     text_file.write(f"----------------------------")
